@@ -1,0 +1,116 @@
+
+@import '../utils/variables';
+
+/* TABLE STYLES START */
+#entities {
+    font-family: Arial;
+}
+
+#entities {
+    td {
+       border-bottom: 1px solid $border-color-table;
+       border-top: none;
+    }
+    th {
+       border-bottom: 1px solid $border-color-table;
+       border-top: none;
+       text-align: left;
+       background-color: $background-color;
+       color: var(--secondary);
+    }
+}
+
+.table-responsive {
+    display: table;
+}
+/* TABLE STYLES END */
+
+
+button {
+    &:focus {
+      outline: none;
+    }
+}
+
+/* SIDEBAR STYLES START*/
+.sidenav {
+    height: 100%;
+    display: none;
+    z-index: 1;
+    top: 56px;
+    right: 0;
+    background-color: $background-color;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.sidenav-visible {
+    .sidenav {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidenav-visible {
+        .table-wrapper {
+            width: calc(100% - 300px);
+        }
+        .sidenav {
+            width: 300px;
+            position: fixed;
+            padding-top: 60px;
+        }
+    }
+}
+/* SIDEBAR STYLES END*/
+
+.details {
+    &-btn {
+       border: none;
+       background-color: transparent;
+       &:focus {
+        border-bottom: 3px solid $border-bottom-color-button-focus;
+        border-left: .5px solid $border-left-color-button-focus;
+        border-top: .5px solid $border-top-color-button-focus;
+        border-right: .5px solid $border-right-color-button-focus;
+        background-color: $background-color;
+       }
+    }
+}
+
+.desc-heading {
+    background-color: rgba(0,0,0,.075);
+    padding: 8px;
+    margin-right: 10px;
+    margin-left: 2px;
+}
+
+.new-desc {
+    padding: 8px;
+}
+
+.scroller {
+    max-height: calc(100vh - 56px);
+    overflow: auto;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 992px) {
+    .images {
+        justify-content: space-between;
+        flex-direction: row;
+        max-width: 100px;
+    }
+}
+
+@media (min-width: 992px) {
+    .close-btn {
+        position: absolute;
+        top: 0;
+        right: 10px;
+    }
+}

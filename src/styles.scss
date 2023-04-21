@@ -1,0 +1,30 @@
+@import './app/utils/variables';
+
+/* scroll bar start */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: $background-webkit-scrollbar-track;
+    margin: 0 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $background-webkit-scrollbar;
+    border-radius: 4px;
+    min-height: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $background-webkit-scrollbar;
+}
+
+/* scroll bar end */
+
+body {
+    overflow-x: hidden;
+}

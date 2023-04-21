@@ -1,0 +1,61 @@
+<section id="tab-section" role="table">
+    <div [ngClass]="isSelected ? 'sidenav-visible' : ''">
+        <div class="scroller table-wrapper">
+             <table id="entities" class="table table-responsive">
+                <tr>
+                    <th>Date</th>
+                    <th>List Name</th>
+                    <th>No.of Entities</th>
+                    <th>Actions</th>
+                    <th></th>
+                </tr>
+        
+                <tr *ngFor="let entity of allEntities ; let i = index" class="row{{i}}" [ngClass]="(selectedRowIndex === i && isSelected ? 'table-active': '')">
+                    <td>
+                        <span *ngIf="entity.showNormal">{{entity.date}}</span>
+                        <input *ngIf="entity.showInput" id="date{{i}}" name="date{{i}}" type="text" [(ngModel)]="entity.date"
+                            class="form-control" value="{{entity.date}}">
+                    </td>
+                    <td>
+                        <span *ngIf="entity.showNormal">{{entity.listName}}</span>
+                        <input *ngIf="entity.showInput" id="listname{{i}}" name="listname{{i}}" type="text" [(ngModel)]="entity.listName"
+                            class="form-control" value="{{entity.listName}}">
+                    </td>
+                    <td>
+                        <span *ngIf="entity.showNormal">{{entity.noOfEntities}}</span>
+                        <input *ngIf="entity.showInput" id="entity{{i}}" name="entity{{i}}" type="text" [(ngModel)]="entity.noOfEntities"
+                            class="form-control" value="{{entity.noOfEntities}}">
+                    </td>
+                    <td>
+                        <div class="images">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="details-btn details{{i}}" (click)="selectEntity(entity,i)">
+                            <a>Details</a>
+                        </button>
+                    </td>
+                </tr>
+             </table>
+        </div>
+            
+        <div id="mySidenav" class="sidenav scroller">
+            <div class="close-btn">
+                <button type="button" class="close" aria-label="Close" (click)="closeSideNavBar()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="desc-heading">
+                No description yet +<b>Add Description</b>
+            </div>
+            <div class="new-desc">
+                {{description}}
+            </div>
+        </div>            
+    </div>
+</section>

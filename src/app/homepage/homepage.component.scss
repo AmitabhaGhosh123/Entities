@@ -1,0 +1,35 @@
+@import '../utils/variables';
+
+/* NAVBAR STYLES START */
+.navbar {
+    &-nav {
+        li {
+            &:nth-child(1),&:nth-child(2) {
+               margin-right: 20px; 
+            }
+        }
+        .nav-link {
+            color: $background-color-navlink-text;
+        }
+        .active {
+        > .nav-link {
+            color: $background-color-selected-navlink-text;
+            background-color: $background-color-selected-navlink;
+            border-radius: 3px;
+         }
+        } 
+    }
+}
+/* NAVBAR STYLES END */
+
+input {
+    &:focus-visible {
+      outline: none;
+    }
+}
+
+.form-inline {
+    .form-control {
+      min-width: 400px;
+    }
+}
